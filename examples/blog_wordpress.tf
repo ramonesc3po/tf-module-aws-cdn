@@ -19,7 +19,6 @@ module "cdn_wordpress" {
   aliases          = "www.zigzaga.com"
   cdn_tier         = "production"
   cdn_organization = "zigzaga"
-
   domain_name = "${module.bucket_wordpress.domain_name_bucket}"
   origin_id   = "${module.bucket_wordpress.id_bucket}"
 

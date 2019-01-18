@@ -76,5 +76,5 @@ resource "aws_cloudfront_distribution" "this" {
     minimum_protocol_version       = "${var.minimum_protocol_version}"
   }
 
-  tags = "${merge(local.common_tags, var.tags,map("Name", ${var.aliases}))}"
+  tags = "${merge(local.common_tags, var.tags,map("Name", var.aliases))}"
 }
