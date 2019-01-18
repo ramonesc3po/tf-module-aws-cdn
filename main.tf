@@ -7,7 +7,7 @@ locals {
 }
 
 resource "aws_cloudfront_origin_access_identity" "default" {
-  comment = "${var.aliases}"
+  comment = "${var.cdn_name}"
 }
 
 resource "aws_cloudfront_distribution" "this" {
@@ -80,5 +80,5 @@ resource "aws_cloudfront_distribution" "this" {
     minimum_protocol_version       = "${var.minimum_protocol_version}"
   }
 
-  tags = "${merge(local.common_tags, var.tags,map("Name", var.aliases))}"
+  tags = "${merge(local.common_tags, var.tags,map("Name", var.cdn_name))}"
 }

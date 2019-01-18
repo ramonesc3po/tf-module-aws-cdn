@@ -177,6 +177,10 @@ variable "custom_origin_ssl_protocols" {
   default     = ["TLSv1", "TLSv1.1", "TLSv1.2"]
 }
 
+variable "cdn_name" {
+  description = "Use to define a name to origin identity and tags"
+}
+
 variable "cdn_tier" {
   description = "Define which environment will be applied. Example staging, production, integration"
 }
