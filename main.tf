@@ -60,6 +60,10 @@ resource "aws_cloudfront_distribution" "this" {
       origin_protocol_policy = "${var.custom_origin_protocol_policy}"
       origin_ssl_protocols   = "${var.custom_origin_ssl_protocols}"
     }
+
+    s3_origin_config {
+      origin_access_identity = "${aws_cloudfront_origin_access_identity.default.cloudfront_access_identity_path}"
+    }
   }
 
   "restrictions" {
